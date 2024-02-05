@@ -1,0 +1,208 @@
+<!--
+Author: Devesh Gurusinghe
+Desc  : This page is the layout for add event
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/bootstrap.min.css" rel="stylesheet" />
+        <title>Add Event Page</title>
+
+        <style>
+            .text-gradient {
+                background: -webkit-linear-gradient(
+                    315deg,
+                    #1e30f3 0%,
+                    #e21e80 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        </style>
+    </head>
+
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Header -->
+            <div class="container px-5 my-5">
+                <h1 class="display-3 fw-bolder text-center mb-5">
+                    <span class="text-gradient d-inline">
+                        <a href="/">Event Management System</a>
+                    </span>
+                </h1>
+
+                <!-- Add Category Card-->
+                <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Add Event</h1>
+                        <p class="lead fw-normal text-muted mb-0">
+                            Fill in Event details &amp; click submit
+                        </p>
+                    </div>
+
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <form
+                                action="/api/v1/event/32818866/add"
+                                method="post"
+                            >
+                                <!-- Name input-->
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Name<span style="color: red"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        placeholder="Enter event name"
+                                        name="EventName"
+                                    />
+                                </div>
+                                <!-- Description input-->
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Description<span style="color: red"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <textarea
+                                        class="form-control"
+                                        type="text"
+                                        style="height: 7rem"
+                                        name="EventDesc"
+                                    ></textarea>
+                                </div>
+                                <!-- Image input-->
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Image</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        placeholder="/default.png"
+                                        name="EventImage"
+                                    />
+                                </div>
+
+                                <!-- Start Date Time-->
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Start Date Time<span style="color: red"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        type="datetime-local"
+                                        placeholder="Enter event name"
+                                        name="EventStart"
+                                    />
+                                </div>
+
+                                <!--Duration -->
+
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Duration In Minutes<span
+                                            style="color: red"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        type="number"
+                                        placeholder="Enter duration in minutes"
+                                        name="EventDuration"
+                                    />
+                                </div>
+
+                                <!--Is Active -->
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Is Active<span style="color: red"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="checkbox"
+                                        placeholder="Enter event name"
+                                        name="EventActive"
+                                    />
+                                </div>
+
+                                <!--Capacity -->
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Capacity<span style="color: red"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        placeholder="Event capacity"
+                                        name="EventCapacity"
+                                        min="10"
+                                        max="20000"
+                                    />
+                                </div>
+
+                                <!--Ticket Avaiable-->
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Tickets Available<span
+                                            style="color: red"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        type="number"
+                                        placeholder="Tickets Available (optional)"
+                                        name="EventTicket"
+                                    />
+                                </div>
+
+                                <!--Category id -->
+                                <div class="form mb-3">
+                                    <label style="margin-bottom: 1%"
+                                        >Category id<span style="color: red"
+                                            >*</span
+                                        ></label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        placeholder="Category id"
+                                        name="EventID"
+                                    />
+                                </div>
+
+                                <!-- Submit Button-->
+                                <div class="d-grid">
+                                    <button
+                                        class="btn btn-primary btn-lg"
+                                        type="submit"
+                                    >
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

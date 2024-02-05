@@ -1,0 +1,207 @@
+<!--
+Author: Michellia Herman & Devesh Gurusinghe
+Desc  : This page is the layout for the site's homepage
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FIT2095 - Assignment 1 From Team 2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/bootstrap.min.css" rel="stylesheet" />
+        <title>List of Categories Page</title>
+
+        <style>
+            .text-gradient {
+                background: -webkit-linear-gradient(
+                    315deg,
+                    #1e30f3 0%,
+                    #e21e80 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .crop {
+                width: 265px;
+                height: 150px;
+                overflow: hidden;
+            }
+
+            .crop img {
+                width: 400px;
+                height: 300px;
+                margin: -75px 0 0 -67px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container px-5 my-5">
+            <!-- System Name -->
+            <div class="text-center mb-5">
+                <h1 class="display-3 fw-bolder text-center mb-5">
+                    <span class="text-gradient d-inline">
+                        <a href="/">Event Management System</a>
+                    </span>
+                </h1>
+            </div>
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col mb-3">
+                        <div class="border border-dark p-4 text-center">
+                            <h2><%= events %></h2>
+                            <h5>Events</h5>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="border border-dark p-4 text-center">
+                            <h2><%= categories %></h2>
+                            <h5>Categories</h5>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="border border-dark p-4 text-center">
+                            <% if(operation == null) { %>
+                            <h2>0</h2>
+                            <% } else { %>
+                            <h2><%= operation.created %></h2>
+                            <% } %>
+                            <h5>Records Created</h5>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="border border-dark p-4 text-center">
+                            <% if(operation == null) { %>
+                            <h2>0</h2>
+                            <% } else { %>
+                            <h2><%= operation.deleted %></h2>
+                            <% } %>
+                            <h5>Records Deleted</h5>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="border border-dark p-4 text-center">
+                            <% if(operation == null) { %>
+                                <h2>0</h2>
+                            <% } else { %>
+                                <h2><%= operation.updated %></h2>
+                            <% } %>
+                            <h5>Record Updates</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Divider -->
+            <div class="pb-5"></div>
+
+            <!-- Page Content -->
+            <div class="row gx-5 justify-content-center">
+                <div
+                    class="d-flex align-items-center justify-content-between mb-4"
+                >
+                    <h2 class="fw-bolder mb-0">Admin Panel</h2>
+                    <div class="crop">
+                        <img src="/team_logo.png" />
+                    </div>
+                </div>
+
+                <!-- Student 1 Card -->
+                <div class="card shadow border-0 rounded-4 mb-5">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div
+                                class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"
+                            >
+                                <i class="bi bi-chat-square-heart"></i>
+                            </div>
+                            <h3 class="fw-bolder mb-0">
+                                Task Group 1 (Student #31837409)
+                            </h3>
+                        </div>
+
+                        <div class="container text-center">
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/category/31837409/add"
+                                >Add New Category</a
+                            >
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/category/31837409/list"
+                                >View All Categories</a
+                            >
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/category/31837409/search?keyword="
+                                >List Categories by Keyword</a
+                            >
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/event/31837409/details/def"
+                                >Show Event Details</a
+                            >
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/category/31837409/del"
+                                >Delete Category by ID</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow border-0 rounded-4 mb-5">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div
+                                class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"
+                            >
+                                <i class="bi bi-chat-square-heart"></i>
+                            </div>
+
+                            <!-- Student 2 Card -->
+                            <h3 class="fw-bolder mb-0">
+                                Task Group 2 (Student #32818866)
+                            </h3>
+                        </div>
+
+                        <div class="container text-center">
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/api/v1/event/32818866/add"
+                                >Add event</a
+                            >
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/api/v1/event/32818866/list"
+                                >List all events</a
+                            >
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/api/v1/event/32818866/list-sold"
+                                >List Sold out events</a
+                            >
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/api/v1/event/32818866/category-details/def"
+                                >Category Detail Page</a
+                            >
+                            <a
+                                class="btn btn-outline-dark"
+                                href="/api/v1/event/32818866/del"
+                                >Delete Event by ID</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

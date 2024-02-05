@@ -1,0 +1,83 @@
+<!--
+Author: Michellia Herman
+Desc  : This page is the layout for displaying the list of category
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/bootstrap.min.css" rel="stylesheet" />
+    <title>List of Categories Page</title>
+
+    <style>
+        .text-gradient {
+            background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+<main class="flex-shrink-0">
+
+    <!-- Page Content-->
+    <div class="container px-5 my-5">
+        <h1 class="display-3 fw-bolder text-center mb-5">
+            <a href="/" style="text-decoration: none; color: black">Event Management System</a></h1>
+        <hr>
+        <h1 class="fw-bolder mb-5 text-center"><span class="text-gradient d-inline">Category List</span></h1>
+
+        <div class="row gx-5 justify-content-center">
+            <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body">
+
+                    <table class="table table-hover">
+                        <!-- Table Header -->
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Created Date</th>
+                            <th scope="col">Events Count</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+
+                        <!-- Table Content -->
+                        <tbody>
+                        <% for(let i=0;i<categories.length;i++){ %>
+                        <tr>
+                            <td><%= categories[i].categoryId %></td>
+                            <td><%= categories[i].name %></td>
+                            <td><%= categories[i].description %></td>
+                            <td><img src=<%= categories[i].image %> width="50%" height="auto" /> </td>
+                            <td><%= categories[i].createdDate %> </td>
+                            <td><%=categories[i].eventList.length%></td> <!--to be added-->
+                            <td>
+                                <a type="button" class="btn btn-primary" id="<%= categories[i].id%>"
+                                   onclick="viewDetails(id);">View</a>
+                            </td>
+                        </tr>
+
+                        <% } %>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<script type="text/javascript">
+    function viewDetails(id) {
+        location.href = "/api/v1/event/32818866/view/" + id
+    }
+</script>
+</html>

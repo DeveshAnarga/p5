@@ -1,0 +1,78 @@
+<!--
+Author: Devesh Gurusinghe 
+Desc  : This page is the layout for specified Category details
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FIT2095 - Assignment 1 From Team 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/bootstrap.min.css" rel="stylesheet" />
+    <title>List of Categories Page</title>
+
+    <style>
+      .text-gradient {
+        background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container px-5 my-5">
+      <!-- System Name -->
+      <div class="text-center">
+        <h1 class="display-3 fw-bolder text-center">
+          <span class="text-gradient d-inline">
+            <a href="/">Event Management System</a>
+          </span>
+        </h1>
+        <hr/>
+      </div>
+
+      <!-- Page Content -->
+      <div class="row gx-5 justify-content-center">
+
+        <!-- category Banner Image -->
+        <div class="text-center">
+          <img src="<%= category.image %>" style="width: 940px; height: 470px; object-fit: unset;" >
+        </div>
+
+        <!-- category Name -->
+        <div class="text-center">
+          <h2 class=" fw-bolder mb-3"><%= category.name %></h2>
+        </div>
+
+        <!-- category Details -->
+        <div class="card shadow border-0 rounded-4 mb-5">
+          <div class="card-body p-5">
+            <div class="mb-2">
+              <b>Category ID</b><br/>
+              <%= category.id %>
+            </div>
+            <div class="mb-2">
+              <b>Name</b><br/>
+              <%= category.name %>
+            </div>
+            <div class="mb-2">
+              <b>Description</b><br/>
+              <%= category.desc %>
+            </div>
+            <div class="mb-2">
+                <b>Image</b><br/>
+                <%= category.image %>
+            </div>         
+            <div class="mb-2">
+              <b>Created Date </b><br/>
+              <%= category.start %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
